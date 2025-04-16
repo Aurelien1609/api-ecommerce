@@ -1,0 +1,74 @@
+# Fichiers et dossiers générés par PyCharm
+.idea/
+
+# Environnements virtuels
+venv/
+env/
+.venv/
+.env/
+
+# Fichiers de configuration de l'environnement
+*.env
+
+# Fichiers de compilation Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Sorties de tests
+htmlcov/
+.tox/
+.nox/
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Sorties de construction
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Journaux et fichiers temporaires
+*.log
+*.tmp
+*.temp
+*.swp
+
+# Fichiers de base de données
+*.sqlite3
+
+# Fichiers de cache
+.cache/
+
+# Fichiers de configuration de l'éditeur
+*.sublime-project
+*.sublime-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints
+.jupyter
+.local
+.npm
+.ipython
+
+# Fichiers de configuration de l'OS
+.DS_Store
+Thumbs.db
+
+# Autres fichiers spécifiques à Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Fichiers de verrouillage
+poetry.lock
+Pipfile.lock
+
+# Fichiers de documentation
+docs/_build/
+
+# Jeu de données
+data/
