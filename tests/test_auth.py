@@ -1,6 +1,7 @@
 import pytest
 from werkzeug.security import generate_password_hash
 
+
 def test_register_success(client, session):
     """
     Test successful user registration.
@@ -12,6 +13,7 @@ def test_register_success(client, session):
     resp = client.post("/api/auth/register", json=payload)
     assert resp.status_code == 201
     assert resp.json["message"] == "Subscription done !"
+
 
 def test_register_missing_fields(client, session):
     """
@@ -25,6 +27,7 @@ def test_register_missing_fields(client, session):
     assert resp.status_code == 400
     assert "Missing fields" in resp.json["error"]
 
+
 def test_register_existing_email(client, session):
     """
     Test registration with an already existing email.
@@ -37,6 +40,7 @@ def test_register_existing_email(client, session):
     resp2 = client.post("/api/auth/register", json=payload)
     assert resp2.status_code == 409
     assert f"User {payload['email']} already exist." in resp2.json["error"]
+
 
 def test_register_unexpected_error(monkeypatch, client, session):
     """
@@ -56,6 +60,7 @@ def test_register_unexpected_error(monkeypatch, client, session):
     assert resp.status_code == 500
     assert "Internal error" in resp.json["error"]
 
+
 @pytest.fixture
 def user_in_db(session):
     """
@@ -64,6 +69,7 @@ def user_in_db(session):
         User instance
     """
     from api_ecommerce.models import User
+
     user = User(
         email="loginuser@example.com",
         password=generate_password_hash("strongpass", method="pbkdf2:sha256"),
@@ -72,6 +78,7 @@ def user_in_db(session):
     session.add(user)
     session.commit()
     return user
+
 
 def test_login_success(client, session, user_in_db):
     """
@@ -86,6 +93,7 @@ def test_login_success(client, session, user_in_db):
     json = response.get_json()
     assert "token" in json and len(json["token"]) > 10  # JWT is returned
 
+
 def test_login_missing_fields(client):
     """
     Test login with missing required fields.
@@ -98,6 +106,7 @@ def test_login_missing_fields(client):
     assert response.status_code == 400
     assert "Missing fields" in response.get_json().get("error", "")
 
+
 def test_login_user_not_exist(client):
     """
     Test login attempt with a non-existent user.
@@ -109,6 +118,7 @@ def test_login_user_not_exist(client):
     response = client.post("/api/auth/login", json=payload)
     assert response.status_code == 409  # Used instead of 404, as per implementation
     assert "not exist" in response.get_json().get("error", "")
+
 
 def test_login_bad_password(client, session, user_in_db):
     """

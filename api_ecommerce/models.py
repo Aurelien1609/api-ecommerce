@@ -7,7 +7,7 @@ from sqlalchemy import (
     DATETIME,
     CheckConstraint,
     ForeignKey,
-    Engine
+    Engine,
 )
 from sqlalchemy.orm import declarative_base
 from typing import Tuple, Optional
@@ -28,6 +28,7 @@ class Product(Base):
         stock (int): Quantity of product in stock.
         date_creation (datetime): Date the product was created.
     """
+
     __tablename__ = "products"
 
     id = Column(Integer, primary_key=True)
@@ -54,6 +55,7 @@ class User(Base):
     Constraints:
         - 'role' must be either 'admin' or 'user'.
     """
+
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True)
@@ -80,6 +82,7 @@ class Command(Base):
     Constraints:
         - 'status' must be 'on hold', 'validated', 'canceled', or 'shipped'.
     """
+
     __tablename__ = "commands"
 
     id = Column(Integer, primary_key=True)
@@ -107,6 +110,7 @@ class CommandLign(Base):
         quantity (int): Quantity of the product in the order.
         price (int): Price of the product at the time of ordering.
     """
+
     __tablename__ = "commands_lign"
 
     id = Column(Integer, primary_key=True)
@@ -129,7 +133,5 @@ def build_engine(filename: str) -> Tuple[Engine, Optional[bool]]:
             - engine_instance: The SQLAlchemy engine connected to the SQLite database.
             - result: The result of Base.metadata.create_all(engine_instance).
     """
-    engine_instance = create_engine(
-        f"sqlite:///data/db_data/{filename}.db"
-    )
+    engine_instance = create_engine(f"sqlite:///data/db_data/{filename}.db")
     return engine_instance, Base.metadata.create_all(engine_instance)

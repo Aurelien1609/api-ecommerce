@@ -192,9 +192,7 @@ def delete_product(product_id: int) -> jsonify:
     session.commit()
     return (
         jsonify(
-            {
-                "message": f"Product {product.name} with ID = {product_id} was deleted."
-            }
+            {"message": f"Product {product.name} with ID = {product_id} was deleted."}
         ),
         200,
     )

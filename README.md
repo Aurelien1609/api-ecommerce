@@ -2,12 +2,12 @@
 # API E-commerce (Flask + SQLAlchemy)
 
 ## Description
-Cette API RESTful propulse la gestion d’une boutique en ligne : inscription/authentification, produits, commandes, gestion des rôles, sécurité JWT, tout est prévu pour une expérience robuste, évolutive et éducative.
+API RESTful pour la gestion d’une boutique en ligne : inscription/authentification, recherche de produits, création et modification de commandes, gestion des rôles, sécurité JWT.
 
 ---
 
 ## Prérequis
-- Python 3.8+
+- Python 3.12+
 - pip
 - Virtualenv (optionnel)
 - Base de données compatible SQLAlchemy (SQLite, PostgreSQL, MySQL...)
@@ -39,7 +39,7 @@ Cette API RESTful propulse la gestion d’une boutique en ligne : inscription/au
 ## Lancement
 - Lancer l’API :  
    ```bash
-   flask run
+   python api_ecommerce/run.py
    ```
 - Par défaut, l'API est disponible sur : [http://localhost:5000](http://localhost:5000)
 

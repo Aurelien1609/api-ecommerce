@@ -9,18 +9,16 @@ dotenv.load_dotenv()
 DATABASE_SQL_TEST = os.getenv("DATABASE_SQL_TEST")
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope="session")
 def app():
     app = create_app()
-    app.config.update({
-        "TESTING": True,
-        "SECRET_KEY": SECRET_KEY
-    })
+    app.config.update({"TESTING": True, "SECRET_KEY": SECRET_KEY})
     return app
+
 
 @pytest.fixture()
 def session(app):
-    connection = app.session_factory.kw['bind'].connect()
+    connection = app.session_factory.kw["bind"].connect()
     transaction = connection.begin()
     session = app.session_factory(bind=connection)
     nested = connection.begin_nested()
@@ -40,7 +38,6 @@ def session(app):
     session.close()
     transaction.rollback()
     connection.close()
-
 
 
 @pytest.fixture

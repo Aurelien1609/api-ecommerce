@@ -99,4 +99,3 @@ def register() -> jsonify:
         return jsonify({"error": f"Internal error: {str(e)}"}), 500
 
     return jsonify({"message": "Subscription done !"}), 201
-

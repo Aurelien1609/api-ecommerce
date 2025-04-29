@@ -10,6 +10,7 @@ from collections import Counter
 COMMAND_FIELD = ["address_delivery", "product_id"]
 commands_print = Blueprint("commands", __name__)
 
+
 @commands_print.route("/commands", methods=["GET"])
 @user_required(pass_user=True, needed_admin=False)
 def list_commands(user: User) -> jsonify:
@@ -33,27 +34,27 @@ def list_commands(user: User) -> jsonify:
             return jsonify({"error": "Session factory not set"}), 500
         session = session_factory()
     if user.role == "user":
-        commands = (
-            session.query(Command).filter_by(user_id=user.id).all()
-        )
+        commands = session.query(Command).filter_by(user_id=user.id).all()
     else:
-        commands = (
-            session.query(Command).all()
-        )
+        commands = session.query(Command).all()
     if not commands:
         return jsonify({"error": "Commands not found."}), 404
 
-    return jsonify(
-        [
-            {
-                "command_id": command.id,
-                "status": command.status,
-                "address_delivery": command.address_delivery,
-                "date_command": command.date_command
-            }
-            for command in commands
-        ]
-    ), 200
+    return (
+        jsonify(
+            [
+                {
+                    "command_id": command.id,
+                    "status": command.status,
+                    "address_delivery": command.address_delivery,
+                    "date_command": command.date_command,
+                }
+                for command in commands
+            ]
+        ),
+        200,
+    )
+
 
 @commands_print.route("/command/<int:command_id>", methods=["GET"])
 @user_required(pass_user=True, needed_admin=False)
@@ -82,9 +83,7 @@ def get_command(user: User, command_id: int) -> jsonify:
             session.query(Command).filter_by(id=command_id, user_id=user.id).first()
         )
     else:
-        command = (
-            session.query(Command).filter_by(id=command_id).first()
-        )
+        command = session.query(Command).filter_by(id=command_id).first()
     if not command:
         return jsonify({"error": "Command not found."}), 404
 
@@ -125,12 +124,9 @@ def get_command_lign(user: User, command_id: int) -> jsonify:
             session.query(Command).filter_by(id=command_id, user_id=user.id).first()
         )
     else:
-        command = (
-            session.query(Command).filter_by(id=command_id).first()
-        )
+        command = session.query(Command).filter_by(id=command_id).first()
     if not command:
         return jsonify({"error": "Command not found."}), 404
-
 
     stmt = (
         select(CommandLign, Product.name)
@@ -218,7 +214,11 @@ def create_command(user: User) -> jsonify:
                     session.commit()
                 else:
                     return (
-                        jsonify({"error": f"Product quantity is not sufficient {count} > {product["stock"]} for {product["name"]}."}),
+                        jsonify(
+                            {
+                                "error": f"Product quantity is not sufficient {count} > {product["stock"]} for {product["name"]}."
+                            }
+                        ),
                         500,
                     )
             except AttributeError:
@@ -242,6 +242,7 @@ def create_command(user: User) -> jsonify:
         ),
         201,
     )
+
 
 @commands_print.route("/command/<int:command_id>", methods=["PATCH"])
 @user_required(pass_user=False, needed_admin=True)
@@ -268,9 +269,7 @@ def update_command_status(command_id: int) -> jsonify:
         if session_factory is None:
             return jsonify({"error": "Session factory not set"}), 500
         session = session_factory()
-    command = (
-        session.query(Command).filter_by(id=command_id).first()
-    )
+    command = session.query(Command).filter_by(id=command_id).first()
     if not command:
         return jsonify({"error": "Command not found."}), 404
 
@@ -282,6 +281,6 @@ def update_command_status(command_id: int) -> jsonify:
             "id": command.id,
             "status": command.status,
             "address_delivery": command.address_delivery,
-            "date_command": command.date_command
+            "date_command": command.date_command,
         }
     )

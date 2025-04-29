@@ -20,6 +20,7 @@ def user_required(pass_user: bool = False, needed_admin: bool = True):
     Returns:
         Callable: The decorated function with authentication and authorization checks applied.
     """
+
     def decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
