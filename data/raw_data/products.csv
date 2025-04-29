@@ -1,0 +1,51 @@
+ID,Nom de produit,Description du produit,Catégorie du produit,Prix unitaire,Quantité en stock,Date d'ajout du produit
+1,Ordinateur Portable X200,Ordinateur portable performant avec 16 Go de RAM et 512 Go SSD,Ordinateurs,1200.00,50,2023-10-01
+2,Clavier Mécanique Pro,Clavier mécanique avec rétroéclairage RGB,Accessoires,150.00,200,2023-09-15
+3,Écran 4K Ultra HD,Écran 27 pouces avec résolution 4K,Moniteurs,400.00,75,2023-08-20
+4,Souris Gaming Z500,Souris ergonomique avec capteur haute précision,Accessoires,60.00,150,2023-07-30
+5,Disque Dur Externe 2TB,Disque dur externe USB 3.0,Stockage,100.00,120,2023-06-25
+6,Imprimante Multifonction AIO,Imprimante avec scanner et photocopieur intégrés,Imprimantes,250.00,30,2023-05-10
+7,Routeur Wi-Fi 6,Routeur avec technologie Wi-Fi 6 pour une connexion rapide,Réseaux,180.00,40,2023-04-18
+8,Carte Graphique GTX 3080,Carte graphique haute performance pour gaming,Composants,700.00,25,2023-03-05
+9,Barre de Son Bluetooth,Barre de son avec connectivité Bluetooth,Audio,120.00,60,2023-02-14
+10,Webcam HD 1080p,Webcam avec microphone intégré pour vidéoconférences,Accessoires,80.00,90,2023-01-22
+11,Station d'Accueil USB-C,Station d'accueil avec multiples ports pour ordinateurs portables,Accessoires,130.00,45,2023-09-10
+12,Tablette Graphique Pro,Tablette graphique avec stylet sensible à la pression,Accessoires,300.00,35,2023-08-05
+13,SSD Interne 1TB,SSD interne avec interface NVMe pour des vitesses élevées,Stockage,150.00,80,2023-07-15
+14,Enceintes de Bureau,Enceintes compactes avec son stéréo,Audio,70.00,100,2023-06-10
+15,Microphone USB,Microphone USB pour enregistrement de haute qualité,Audio,90.00,60,2023-05-20
+16,Switch Ethernet 8 Ports,Switch Ethernet gigabit pour réseau local,Réseaux,50.00,70,2023-04-25
+17,Onduleur 1000VA,Onduleur pour protection contre les coupures de courant,Énergie,200.00,20,2023-03-30
+18,Projecteur LED 1080p,Projecteur avec résolution Full HD pour home cinéma,Moniteurs,350.00,15,2023-02-18
+19,Support Écran Réglable,Support pour écran avec hauteur ajustable,Accessoires,40.00,110,2023-01-05
+20,Clé USB 128GB,Clé USB avec grande capacité de stockage,Stockage,30.00,250,2023-10-12
+21,Chargeur Universel,Chargeur universel pour ordinateurs portables,Accessoires,60.00,90,2023-09-22
+22,Hub USB 3.0,Hub USB avec 4 ports pour connexion rapide,Accessoires,25.00,150,2023-08-30
+23,Antivirus Pro 1 An,Logiciel antivirus avec licence d'un an,Logiciels,50.00,500,2023-07-18
+24,Carte Mère ATX,Carte mère compatible avec processeurs Intel,Composants,180.00,40,2023-06-12
+25,Boîtier PC Gaming,Boîtier avec éclairage RGB et ventilation optimisée,Composants,100.00,30,2023-05-08
+26,Alimentation 750W,Alimentation pour PC avec certification 80 Plus Gold,Composants,120.00,25,2023-04-02
+27,Webcam 4K,Webcam avec résolution 4K pour streaming,Accessoires,150.00,50,2023-03-22
+28,Tablette Tactile 10,Tablette avec écran tactile de 10 pouces,Tablettes,250.00,60,2023-02-11
+29,Imprimante 3D,Imprimante 3D pour création de prototypes,Imprimantes,500.00,10,2023-01-30
+30,Scanner de Documents,Scanner rapide pour documents A4,Imprimantes,200.00,20,2023-10-05
+31,Carte Son Externe,Carte son externe pour une meilleure qualité audio,Audio,80.00,40,2023-09-25
+32,Adaptateur HDMI vers VGA,Adaptateur pour connecter HDMI à VGA,Accessoires,15.00,200,2023-08-15
+33,Support Ordinateur Portable,Support ajustable pour ordinateur portable,Accessoires,35.00,100,2023-07-05
+34,Clavier Sans Fil,Clavier sans fil avec pavé numérique,Accessoires,45.00,150,2023-06-01
+35,Routeur Mesh,Routeur mesh pour couverture Wi-Fi étendue,Réseaux,300.00,25,2023-05-15
+36,Disque Dur NAS 4TB,Disque dur optimisé pour NAS,Stockage,180.00,30,2023-04-10
+37,Écouteurs Bluetooth,Écouteurs sans fil avec réduction de bruit,Audio,120.00,80,2023-03-01
+38,Station de Charge Sans Fil,Station de charge pour appareils compatibles Qi,Accessoires,50.00,70,2023-02-20
+39,Carte Réseau PCIe,Carte réseau PCIe pour connexion Ethernet rapide,Réseaux,40.00,60,2023-01-10
+40,Moniteur Courbé 34,Moniteur courbé avec résolution WQHD,Moniteurs,600.00,20,2023-10-08
+41,Clé de Sécurité USB,Clé de sécurité pour authentification à deux facteurs,Accessoires,70.00,90,2023-09-18
+42,Tablette de Dessin,Tablette de dessin avec écran intégré,Accessoires,400.00,15,2023-08-28
+43,Imprimante Laser Couleur,Imprimante laser avec impression couleur rapide,Imprimantes,350.00,25,2023-07-12
+44,Enregistreur Vidéo Numérique,Enregistreur pour caméras de sécurité,Surveillance,250.00,10,2023-06-18
+45,Micro-casque Gaming,Micro-casque avec son surround 7.1,Audio,100.00,50,2023-05-02
+46,Clavier Ergonomique,Clavier ergonomique pour un confort de frappe,Accessoires,80.00,70,2023-04-22
+47,Webcam avec Anneau Lumineux,Webcam avec éclairage intégré pour streaming,Accessoires,100.00,40,2023-03-12
+48,Tablette Android 8,Tablette Android avec écran de 8 pouces,Tablettes,150.00,60,2023-02-02
+49,Imprimante Photo,Imprimante pour photos de haute qualité,Imprimantes,300.00,15,2023-01-25
+50,Routeur 4G LTE,Routeur pour connexion Internet mobile,Réseaux,120.00,30,2023-10-15
